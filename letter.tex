@@ -6,8 +6,11 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Set variables with the title, authors, etc.
-\newcommand{\Title}{Carta}
-\newcommand{\Author}{Prof. Dr. Leonardo Uieda}
+\newcommand{\Titulo}{Carta}
+\newcommand{\Nome}{Leonardo Uieda}
+\newcommand{\Cargo}{Professor Doutor}
+\newcommand{\Email}{uieda@usp.br}
+\newcommand{\Telefone}{+55 11 30914787}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Import the required packages
@@ -33,7 +36,6 @@
 % Better left and right align
 \usepackage{ragged2e}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Configuration of the document
 
@@ -51,6 +53,7 @@
 
 % Control line spacing
 \onehalfspacing
+\newcommand{\Padding}{\vspace{0.5cm}}
 
 % Custom colors
 \definecolor{darkgray}{gray}{0.4}
@@ -66,8 +69,8 @@
 \hypersetup{
     colorlinks,
     allcolors=mediumblue,
-    pdftitle={\Title},
-    pdfauthor={\Author},
+    pdftitle={\Titulo},
+    pdfauthor={\Nome},
     breaklinks=true,
 }
 
@@ -75,19 +78,20 @@
 \newcommand{\HeaderFont}{\footnotesize\color{mediumgray}}
 \pagestyle{fancy}
 \fancyhf{}
-\lhead{%
+\rhead{%
   \includegraphics[height=1.25cm]{figures/usp.png}
 }
-\rhead{%
+\lhead{%
   \includegraphics[height=1.25cm]{figures/iag.png}
 }
 \cfoot{%
   \HeaderFont{}
   \Centering
+  \onehalfspacing
   Rua do Matão, 1226 - São Paulo, SP, Brasil, 05508-090
   \newline
-  Tel: +55 (11) 30914787;
-  E-mail: \href{mailto:uieda@usp.br}{uieda@usp.br};
+  Tel: \Telefone{};
+  E-mail: \href{mailto:\Email}{\Email};
   Website: \href{https://www.iag.usp.br}{www.iag.usp.br}
 }
 \renewcommand{\headrulewidth}{0pt}
@@ -97,23 +101,43 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
+\begin{flushleft}
+  Nome da pessoa
+  \\
+  Endereço XXXX
+  \\
+  Cidade, País, CEP
+\end{flushleft}
 \begin{flushright}
   \today
 \end{flushright}
-\begin{flushleft}
-  \today
-\end{flushleft}
+\Padding
+
+\noindent
+Cara Pessoa,
+\Padding
 
 \lipsum[1-2]
+\Padding
 
-\vspace{1cm}
 \begin{flushleft}
   Atenciosamente,
 
-  \vspace{1cm}
+  \Padding
   \includegraphics[height=0.9cm]{assinatura.png}
 
-  \Author{}
+  \Nome{}
+  \\[0.25cm]
+  {
+    \color{mediumgray}
+    \small
+    \Cargo
+    \\
+    Departamento de Geofísica
+    \\
+    Instituto de Astronomia, Geofísica e Ciências Atmosféricas
+    \\
+    Universidade de São Paulo
+  }
 \end{flushleft}
-
 \end{document}
